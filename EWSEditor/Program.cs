@@ -76,6 +76,7 @@ namespace EWSEditor
                 // so this seems to be as good as any place.
                 System.Net.ServicePointManager.ServerCertificateValidationCallback = 
                     ValidationCallbackHelper.CertificateValidationCallBack;
+                System.Net.ServicePointManager.SecurityProtocol |= System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
 
                 // If we have command line arguments, parse them...
                 if (Environment.GetCommandLineArgs().Length > 1)
